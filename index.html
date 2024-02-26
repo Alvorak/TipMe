@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <title>Tip Me</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .tip-options {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tip-option {
+            margin: 10px;
+            cursor: pointer;
+            padding: 30px; /* Adjusted padding for bigger boxes */
+            border: 2px solid #fff;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .tip-option:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Leave a Tip</h1>
+        <p>Enjoyed the service? Leave a tip to show your appreciation!</p>
+
+        <div class="tip-options">
+            <div class="tip-option" onclick="PopUp(15)">15%</div>
+            <div class="tip-option" onclick="PopUp(18)">18%</div>
+            <div class="tip-option" onclick="selectTip(20)">20%</div>
+            <div class="tip-option" onclick="selectTip(30)">30%</div>
+            <div class="tip-option" onclick="selectTip(0)">No tip</div>
+            <div class="tip-option" onclick="selectCustomTip()">Custom</div>
+        </div>
+    </div>
+
+    <script>
+        function selectTip(percent) {
+            // You can perform any additional logic here
+            alert(`Selected ${percent}% tip. Thank you!`);
+        }
+        function PopUp(percent) {
+        //const urls = ["https://c.tenor.com/Nhh4h9L-N58AAAAC/magic-word-jurassic-park.gif", "https://c.tenor.com/K0HVCg5P4mIAAAAi/spinning-cheems-kbekeb-gif.gif", "https://c.tenor.com/12DuAMmK3dwAAAAC/sofakingdoge.gif", "https://c.tenor.com/1l9FyOdQMicAAAAC/cat-typing.gif", "https://c.tenor.com/gTg8ZSZMR6YAAAAC/scaler-create-impact.gif", "https://c.tenor.com/bQCHJwgCNuMAAAAC/kitten-cat.gif"];
+        const urls = ["img/15.png"];
+        const gifs = urls[(Math.random() * urls.length) | 0]
+        Swal.fire({
+            imageUrl: "img/15.png",
+            title: 'Thanks!'
+        });
+    }
+        function selectCustomTip() {
+            // You can perform any additional logic here
+            alert("Selected Custom tip. Please enter your desired amount.");
+        }
+    </script>
+</body>
+
+</html>
