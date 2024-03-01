@@ -59,33 +59,35 @@
         <p>Enjoyed the service? Leave a tip to show your appreciation!</p>
 
         <div class="tip-options">
-            <div class="tip-option" onclick="PopUp(15)">15%</div>
-            <div class="tip-option" onclick="PopUp(18)">18%</div>
-            <div class="tip-option" onclick="selectTip(20)">20%</div>
-            <div class="tip-option" onclick="selectTip(30)">30%</div>
-            <div class="tip-option" onclick="selectTip(0)">No tip</div>
-            <div class="tip-option" onclick="selectCustomTip()">Custom</div>
+            <div class="tip-option" onclick="PopUp(15,'Black as night, sweet as sin!')">Coffee</div>
+            <div class="tip-option" onclick="PopUp(18)">A Cold Beer</div>
+            <div class="tip-option" onclick="PopUp(20,'+200$')">A Rise</div>
+            <div class="tip-option" onclick="PopUp(30,'<3')">A Hug</div>
+            <div class="tip-option" onclick="PopUp(0,'(ノಠ益ಠ)ノ彡┻━┻')">No tip</div>
+            <div class="tip-option" onclick="PopUp(100)">Custom</div>
         </div>
     </div>
 
     <script>
-        function selectTip(percent) {
+        function selectTip(percent, mensaje) {
             // You can perform any additional logic here
             alert(`Selected ${percent}% tip. Thank you!`);
         }
-        function PopUp(percent) {
-        //const urls = ["https://c.tenor.com/Nhh4h9L-N58AAAAC/magic-word-jurassic-park.gif", "https://c.tenor.com/K0HVCg5P4mIAAAAi/spinning-cheems-kbekeb-gif.gif", "https://c.tenor.com/12DuAMmK3dwAAAAC/sofakingdoge.gif", "https://c.tenor.com/1l9FyOdQMicAAAAC/cat-typing.gif", "https://c.tenor.com/gTg8ZSZMR6YAAAAC/scaler-create-impact.gif", "https://c.tenor.com/bQCHJwgCNuMAAAAC/kitten-cat.gif"];
+        function PopUp(percent,mensaje) {
         const urls = ["img/15.png"];
         const gifs = urls[(Math.random() * urls.length) | 0]
-        Swal.fire({
-            imageUrl: "img/15.png",
-            title: 'Thanks!'
+        if(percent == 18){
+            Swal.fire({
+            imageUrl: "img/"+percent+".gif",
+            title: 'Make it two!'
         });
-    }
-        function selectCustomTip() {
-            // You can perform any additional logic here
-            alert("Selected Custom tip. Please enter your desired amount.");
+        }else{
+            Swal.fire({
+            imageUrl: "img/"+percent+".png",
+            title: mensaje
+        });
         }
+    }
     </script>
 </body>
 
